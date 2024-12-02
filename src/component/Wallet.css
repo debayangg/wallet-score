@@ -1,0 +1,69 @@
+.wallet-container {
+    text-align: center;
+    color: #fff;
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+    .wallet-container h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .wallet-container p {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+
+.input {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px 0;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .button:disabled {
+        background-color: #6c757d;
+        cursor: not-allowed;
+    }
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ccc;
+    border-top: 5px solid #28a745;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.response {
+    margin-top: 20px;
+    font-size: 18px;
+}
