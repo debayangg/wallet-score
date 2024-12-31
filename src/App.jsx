@@ -1,5 +1,6 @@
 import './App.css';
 import Wallet from './component/Wallet';
+import VisitorCount from './component/VisitorCount'
 
 export default function App() {
     return (
@@ -12,8 +13,9 @@ export default function App() {
                 </p>
             </div>
             <Wallet />
+            <VisitorCount />
             <footer className="footer">
-                <p>© 2024 Wallet Score Checker | Built with care for crypto enthusiasts</p>
+                <p>ï¿½ 2024 Wallet Score Checker | Built with care for crypto enthusiasts</p>
             </footer>
         </main>
     );
