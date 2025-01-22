@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import "./Wallet.css";
 
 const WalletInputPage = () => {
@@ -28,7 +28,7 @@ const WalletInputPage = () => {
     const pollBackend = async () => {
         try {
             const response = await fetch(
-                "https://monkfish-app-vu7h2.ondigitalocean.app/address/process_eth_address",
+                "https://dolphin-app-cleyn.ondigitalocean.app/address/process_eth_address",
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -59,8 +59,13 @@ const WalletInputPage = () => {
         setScore(null);
         setCategory("");
 
+        const startTime = Date.now();
+        const timeout = 10 * 60 * 1000; // 10 minutes in milliseconds
+
         while (true) {
             const result = await pollBackend();
+            const elapsedTime = Date.now() - startTime;
+
             if (result) {
                 if (result.calculated) {
                     const roundedScore = parseFloat(result.score).toFixed(2);
@@ -73,7 +78,13 @@ const WalletInputPage = () => {
                 alert("Error occurred while polling the backend. Please try again.");
                 break;
             }
-            await delay(5000);
+
+            if (elapsedTime >= timeout) {
+                alert("Calculation timed out. Please retry after some time.");
+                break;
+            }
+
+            await delay(5000); // Wait for 5 seconds before polling again
         }
 
         setLoading(false);
