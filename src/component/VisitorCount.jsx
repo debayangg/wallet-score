@@ -8,7 +8,7 @@ export default function VisitorCount() {
     useEffect(() => {
         // Mock API call to fetch unique visitor count
         async function fetchVisitorCount() {
-            const response = await fetch('https://dolphin-app-cleyn.ondigitalocean.app/visit/'); // Replace with your API
+            const response = await fetch('https://whale-app-6i8c4.ondigitalocean.app/visit/'); // Replace with your API
             const data = await response.json();
             setVisitorCount(data.count || 0); // Assuming API returns { count: number }
         }

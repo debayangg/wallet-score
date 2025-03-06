@@ -28,7 +28,7 @@ const WalletInputPage = () => {
     const pollBackend = async () => {
         try {
             const response = await fetch(
-                "https://dolphin-app-cleyn.ondigitalocean.app/address/process_eth_address",
+                "https://whale-app-6i8c4.ondigitalocean.app/address/process_eth_address",
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
